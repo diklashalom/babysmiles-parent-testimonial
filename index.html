@@ -379,7 +379,8 @@
         lines.push("");
       });
     });
-    return lines.join("\n");
+    // סימן RTL בתחילת כל שורה, כדי שתוכנת המייל תציג ותיישר את הטקסט לימין
+    return lines.map(function(l){ return l ? "‏" + l : l; }).join("\n");
   }
 
   form.addEventListener("submit", function(e){
